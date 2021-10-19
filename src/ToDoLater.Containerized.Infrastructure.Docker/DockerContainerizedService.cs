@@ -7,6 +7,7 @@
     using System.Diagnostics;
     using System.IO;
     using System.Linq;
+    using System.Text;
     using System.Text.RegularExpressions;
     using System.Threading;
     using System.Threading.Tasks;
@@ -44,6 +45,7 @@
                 var regex = new Regex(@"\s(([1-9])|([0-9][0-9]+))\serror\(s\)", RegexOptions.Singleline);
 
                 bool receivedErrordata = false;
+                StringBuilder output = new StringBuilder();
                 using (var process = new Process()
                 {
                     StartInfo = new ProcessStartInfo()
@@ -62,15 +64,14 @@
                         {
                             receivedErrordata = true;
                         }
-                       
-                        System.Console.WriteLine(data.Data);
+                        output.AppendLine(data.Data);
                     };
                     process.Start();
                     process.BeginErrorReadLine();
                     process.WaitForExit();
                     if (receivedErrordata || process.ExitCode == 1)
                     {
-                        throw new Exception("Unable to generate docker image.");
+                        throw new Exception($"Unable to generate docker image. \n {output}");
                     }
                 }
             }
