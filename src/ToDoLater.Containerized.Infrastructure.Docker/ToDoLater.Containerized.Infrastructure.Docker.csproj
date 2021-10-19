@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Docker.DotNet" Version="3.125.5" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoLater.Containerized.Infrastructure.Abstraction\ToDoLater.Containerized.Infrastructure.Abstraction.csproj" />
+    <ProjectReference Include="..\ToDoLater.Containerized.Infrastructure.Models\ToDoLater.Containerized.Infrastructure.Models.csproj" />
+    <ProjectReference Include="..\ToDoLater.Containerized.Infrastructure\ToDoLater.Containerized.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
