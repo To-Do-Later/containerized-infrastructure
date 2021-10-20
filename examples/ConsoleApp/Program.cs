@@ -32,17 +32,24 @@ namespace ConsoleApp
                 throw;
             }
         }
+        // todo: later
 
         private static async Task UseAsync(string env)
         {
             using (var tokenSource = new CancellationTokenSource(180000))
             {
                 await using (var infra = ContainerizedInfrastructureBuilder.UsingDocker
-                    .With<SqlService>(() => new DockerServiceSettings("db2", "mcr.microsoft.com/mssql/server:2017-latest", envVars: new List<string> { "ACCEPT_EULA=Y", "SA_PASSWORD=!MyMagicPasswOrd", "MSSQL_PID=Developer", "CHECK_POLICY=OFF", "CHECK_EXPIRY=OFF" }))
-                    .With<LocalApiService>(() => new DockerServiceSettings("webapi", 
-                    dockerfilePath: @"../../../../../examples/sample/WebApplication/Dockerfile", 
-                    tag:"ab.gg", 
-                    portMappings: new Dictionary<string, ISet<string>> { { "8125", new HashSet<string> { "80" } } }
+                    .With<SqlService>(() => new DockerServiceSettings(
+                        name: "db2", 
+                        image: "mcr.microsoft.com/mssql/server:2017-latest", 
+                        envVars: new List<string> { "ACCEPT_EULA=Y", "SA_PASSWORD=!MyMagicPasswOrd", "MSSQL_PID=Developer", "CHECK_POLICY=OFF", "CHECK_EXPIRY=OFF" }
+                        )
+                    )
+                    .With<LocalApiService>(() => new DockerServiceSettings(
+                        name: "webapi", 
+                        dockerfilePath: @"../../../../../examples/sample/WebApplication/Dockerfile", 
+                        tag:"ab.gg", 
+                        portMappings: new Dictionary<string, ISet<string>> { { "8125", new HashSet<string> { "80" } } }
                     ))
                     .Build(new DockerInfrastructureSettings(new Uri("npipe://./pipe/docker_engine"), env)))
                 {

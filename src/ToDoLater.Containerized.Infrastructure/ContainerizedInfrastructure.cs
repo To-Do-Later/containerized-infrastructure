@@ -33,7 +33,7 @@
                     }
                     catch (Exception)
                     {
-                       
+                       // todo: these need to be logged, we need to choose an "independent" logger
                     }
                 }
             }
