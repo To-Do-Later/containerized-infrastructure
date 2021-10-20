@@ -39,8 +39,6 @@
 
         private async Task CleanNetworksAsync(CancellationToken cancellationToken)
         {
-            //Console.WriteLine($"Start cleaning networks for environment :{this.dockerInfrastructureSettings.Environment}");
-
             var networksListParameters = new NetworksListParameters()
             {
                 Filters = new Dictionary<string, IDictionary<string, bool>>
@@ -53,13 +51,11 @@
             foreach (var network in networks)
             {
                 await this.dockerClient.Networks.DeleteNetworkAsync(network.ID, cancellationToken).ConfigureAwait(false);
-                //Console.WriteLine($"Network {network.ID} deleted.");
             }
         }
 
         private async Task CleanContainersAsync(CancellationToken cancellationToken)
         {
-            //Console.WriteLine($"Start cleaning containers for environment :{this.dockerInfrastructureSettings.Environment}");
             var containersListParameters = new ContainersListParameters
             {
                 All = true,
@@ -78,7 +74,6 @@
                     await this.dockerClient.Containers.StopContainerAsync(container.ID, new ContainerStopParameters(), cancellationToken).ConfigureAwait(false);
                 }
                 await this.dockerClient.Containers.RemoveContainerAsync(container.ID, conf, cancellationToken).ConfigureAwait(false);
-                //Console.WriteLine($"Container {container.ID} deleted.");
             }
         }
 

@@ -41,7 +41,7 @@
                 var solutionDirectory = GetSolutionDirectory(new FileInfo(this.settings.DockerfilePath).Directory);
               
 
-                var command = $"build -t \"{this.settings.Image}\" -f {dockerfilePath} ."; // -o artifacts/temp/{Guid.NewGuid()}/ 
+                var command = $"build -t \"{this.settings.Image}\" -f {dockerfilePath} .";
                 var regex = new Regex(@"\s(([1-9])|([0-9][0-9]+))\serror\(s\)", RegexOptions.Singleline);
 
                 bool receivedErrordata = false;
@@ -94,7 +94,6 @@
             }
 
             this.DockerId = await this.CreateContainerAsync(networkId, cancellationToken).ConfigureAwait(false);
-            //Console.WriteLine($"Container created with id: {this.DockerId }");
 
             await this.dockerClient.Containers.StartContainerAsync(this.DockerId, new ContainerStartParameters(), cancellationToken).ConfigureAwait(false);
 
