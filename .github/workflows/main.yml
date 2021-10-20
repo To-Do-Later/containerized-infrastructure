@@ -30,4 +30,4 @@ jobs:
       if: failure()
       with:
         name: ToDoLater.Containerized.Infrastructure.Docker
-        path: containerized-infrastructure/containerized-infrastructure/
+        path: home/runner/work/containerized-infrastructure/containerized-infrastructure/
