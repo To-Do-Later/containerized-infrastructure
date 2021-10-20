@@ -26,7 +26,7 @@ jobs:
     - name: PushNuget
       run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_ORG_API_KEY}} --skip-duplicate
     - name: Archive artifacts
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       if: failure()
       with:
         name: ToDoLater.Containerized.Infrastructure.Docker
