@@ -15,11 +15,11 @@
   <p align="center">
     A simple builder for creating your integration test infrastructure.
     <br />
-    <a href="https://github.com/To-Do-Later/containerized-infrastructure"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/To-Do-Later/containerized-infrastructure"><strong>Explore the docs Â»</strong></a>
     <br />
     <br />
     <a href="https://github.com/To-Do-Later/containerized-infrastructure/tree/master/examples">Samples</a>
-    ·
+    Â·
     <a href="https://github.com/To-Do-Later/containerized-infrastructure/issues">Request Feature</a>
   </p>
 </div>
@@ -198,7 +198,9 @@ public class AndOtherControllerTest
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE.md` for more information.
+
+[![MIT License][license-shield]][license-url]
 
 ## Feedback
 
@@ -220,7 +222,7 @@ If you find a bug, or you want to see a functionality in this library, feel free
 [issues-url]: https://github.com/To-Do-Later/containerized-infrastructure/issues
 
 [license-shield]: https://img.shields.io/github/license/To-Do-Later/containerized-infrastructure.svg?style=for-the-badge
-[license-url]: https://github.com/To-Do-Later/containerized-infrastructure/blob/master/LICENSE.txt
+[license-url]: https://github.com/To-Do-Later/containerized-infrastructure/blob/master/LICENSE.md
 
 
 
