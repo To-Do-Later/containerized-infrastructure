@@ -1,4 +1,5 @@
 ﻿using Cake.Common.Build;
+using Cake.Common.Diagnostics;
 using Cake.Common.Tools.DotNetCore;
 using Cake.Frosting;
 using Cake.Git;
@@ -19,6 +20,10 @@ public sealed class TaggingTask : FrostingTask<BaseBuildContext>
         {
             context.GitTag(".", tagName);
             context.GitPushRef(".", "origin", tagName);
+        }
+        else
+        {
+            context.Warning("Tag {0} already exists", tagName);
         }
 
 
