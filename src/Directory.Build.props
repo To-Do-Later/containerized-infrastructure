@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <PropertyGroup Label="PackageAtributes">
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionSuffix>preview03</VersionSuffix>
+    <Version>$(VersionPrefix)-$(VersionSuffix)</Version>
+    <PackageVersion>$(Version)</PackageVersion>
+    <PackageProjectUrl>https://github.com/To-Do-Later/containerized-infrastructure</PackageProjectUrl>
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
+    <PackageReleaseNotes>A changelog is available at $(RepositoryUrl)/blob/master/CHANGELOG.md.</PackageReleaseNotes>
+    <PackageTags>integration;tests;docker;containers;infrastructure</PackageTags>
+    <Authors>To-Do-Later</Authors>
+    <Copyright>Copyright (c) $([System.DateTime]::UtcNow.Year) $(Authors)</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <!--<PackageReadmeFile>README.md</PackageReadmeFile> waiting for fix in .net 6 https://github.com/NuGet/Home/issues/10791  -->
+    <Description>
+      A simple builder for creating your integration test infrastructure
+    </Description>
+
+    <Deterministic>true</Deterministic>
+    <GenerateDocumentation>true</GenerateDocumentation>
+    <DocumentationFile>bin\$(Configuration)\$(MSBuildProjectName).xml</DocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <ItemGroup Label="PackageIncludes">
+    <None Include="..\..\LICENSE.md" Pack="true" PackagePath="/"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="/"/>
+    <None Include="..\..\CHANGELOG.md" Pack="true" PackagePath="/"/>
+    <None Include="..\..\build\images\icon.png" Pack="true" PackagePath="/"/>
+  </ItemGroup>
+
+</Project>

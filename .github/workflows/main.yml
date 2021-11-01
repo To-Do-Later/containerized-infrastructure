@@ -8,26 +8,13 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Pack
-      run: dotnet pack --no-build --configuration Release src/ToDoLater.Containerized.Infrastructure.Docker/ToDoLater.Containerized.Infrastructure.Docker.csproj --output .
-    - name: PushNuget
-      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_ORG_API_KEY}} --skip-duplicate
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v2
-      if: failure()
-      with:
-        name: ToDoLater.Containerized.Infrastructure.Docker
-        path: home/runner/work/containerized-infrastructure/containerized-infrastructure/
+    - name: Info
+      shell: pwsh
+      run: build.ps1 -t info
