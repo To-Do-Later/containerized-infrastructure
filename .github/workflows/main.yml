@@ -15,6 +15,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
+    - uses: actions/upload-artifact@v2
+        with:
+        name: artifacts
+        path: artifacts/
+        retention-days: 5
     - name: Info
       shell: pwsh
       run: .\build.ps1 -t info
