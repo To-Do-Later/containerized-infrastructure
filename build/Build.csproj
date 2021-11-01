@@ -18,6 +18,9 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="libgit2-6777db8.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="localCI.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
