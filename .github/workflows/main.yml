@@ -18,3 +18,24 @@ jobs:
     - name: Info
       shell: pwsh
       run: .\build.ps1 -t info
+    - name: Clean
+      shell: pwsh
+      run: .\build.ps1 -t clean
+    - name: Restore packages
+      shell: pwsh
+      run: .\build.ps1 -t restore
+    - name: Build projects
+      shell: pwsh
+      run: .\build.ps1 -t build
+    - name: Run tests
+      shell: pwsh
+      run: .\build.ps1 -t test
+    - name: Pack projects
+      shell: pwsh
+      run: .\build.ps1 -t pack
+    - name: Publish Nugets
+      shell: pwsh
+      run: .\build.ps1 -t publishNuget
+    - name: Tag release
+      shell: pwsh
+      run: .\build.ps1 -t tagging
