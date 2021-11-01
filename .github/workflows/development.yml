@@ -2,9 +2,9 @@ name: Development
 
 on:
   push:
-    branches: [ "!master", "!releases/**" ]
+    branches: [ "*","!master", "!releases/**" ]
   pull_request:
-    branches: [ "!master" ]
+    branches: [ "*","!master" ]
 
 jobs:
   build:
