@@ -1,10 +1,8 @@
-name: .NET Core
+name: Publish - master
 
 on:
   push:
-    branches: [ "feature/*" ]
-  pull_request:
-    branches: [ "feature/*" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -38,9 +36,6 @@ jobs:
     - name: Publish Nugets
       shell: pwsh
       run: .\build.ps1 -t publishNuget
-    - name: Tag release
-      shell: pwsh
-      run: .\build.ps1 -t tagging
     - uses: actions/upload-artifact@v2
       if: always()
       with:
