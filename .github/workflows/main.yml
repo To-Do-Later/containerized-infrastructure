@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       NugetApiKey: ${{ secrets.NUGET_ORG_API_KEY }}
     steps:
