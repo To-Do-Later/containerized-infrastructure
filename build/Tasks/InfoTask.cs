@@ -1,5 +1,6 @@
 ﻿using Cake.Common.Diagnostics;
 using Cake.Common.Tools.DotNetCore;
+using Cake.Core.Diagnostics;
 using Cake.Frosting;
 
 [TaskName("info")]
@@ -9,10 +10,14 @@ public sealed class InfoTask : FrostingTask<BaseBuildContext>
     {
         context.DotNetCoreTool("--info");
 
-        foreach (var variable in context.Environment.GetEnvironmentVariables())
+        if (context.Log.Verbosity == Verbosity.Diagnostic)
         {
-            context.Information("{0}:{1}", variable.Key, variable.Value);
+            foreach (var variable in context.Environment.GetEnvironmentVariables())
+            {
+                context.Verbose("{0}:{1}", variable.Key, variable.Value);
+            }
         }
+
     }
 }
 
