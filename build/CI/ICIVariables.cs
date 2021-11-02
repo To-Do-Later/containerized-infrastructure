@@ -1,11 +1,9 @@
 ﻿public interface ICIVariables
 {
-    public string SHACommit { get; }
-    public string RepositoryType { get; }
-    public string Branch { get; }
-    public string NugetApiKey { get; }
-    public string NugetSymbolApiKey { get; }
-    public string NugetSouce { get; }
-
+    string SHACommit { get; }
+    string RepositoryType { get; }
+    string Branch { get; }
+    string NugetApiKey { get; }
+    string NugetSymbolApiKey { get; }
+    string NugetSouce { get; }
 }
-
