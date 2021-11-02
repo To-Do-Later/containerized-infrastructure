@@ -2,10 +2,6 @@
 <Project>
 
   <PropertyGroup Label="PackageAtributes">
-    <VersionPrefix>1.0.0</VersionPrefix>
-    <VersionSuffix>preview03</VersionSuffix>
-    <Version>$(VersionPrefix)-$(VersionSuffix)</Version>
-    <PackageVersion>$(Version)</PackageVersion>
     <PackageProjectUrl>https://github.com/To-Do-Later/containerized-infrastructure</PackageProjectUrl>
     <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageReleaseNotes>A changelog is available at $(RepositoryUrl)/blob/master/CHANGELOG.md.</PackageReleaseNotes>
