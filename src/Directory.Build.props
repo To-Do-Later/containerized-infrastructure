@@ -12,7 +12,7 @@
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <!--<PackageReadmeFile>README.md</PackageReadmeFile> waiting for fix in .net 6 https://github.com/NuGet/Home/issues/10791  -->
     <Description>
-      A simple builder for creating your integration test infrastructure
+      A simple builder for creating your integration test containerized infrastructure
     </Description>
 
     <Deterministic>true</Deterministic>
