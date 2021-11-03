@@ -1,0 +1,41 @@
+name: Releases
+
+on:
+  push:
+    branches: [ "releases/**" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Info
+      shell: pwsh
+      run: .\build.ps1 -t info
+    - name: Clean
+      shell: pwsh
+      run: .\build.ps1 -t clean
+    - name: Restore packages
+      shell: pwsh
+      run: .\build.ps1 -t restore
+    - name: Build projects
+      shell: pwsh
+      run: .\build.ps1 -t build
+    - name: Run tests
+      shell: pwsh
+      run: .\build.ps1 -t test
+    - name: Pack projects
+      shell: pwsh
+      run: .\build.ps1 -t pack
+    - uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        name: artifacts
+        path: artifacts/
+        retention-days: 3
