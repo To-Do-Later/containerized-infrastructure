@@ -2,7 +2,7 @@ name: Releases
 
 on:
   push:
-    branches: [ "releases/**" ]
+    branches: [ "release/*" ]
   pull_request:
     branches: [ "master" ]
 
