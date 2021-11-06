@@ -32,8 +32,8 @@ This project was created with the intention of making easier/generic the setup a
 
 The initial version only has support for docker desktop, but we have no intinction on stopping there, the main goal is to be agnostic how the definition of the infrastructure is done either for local development and CI, without having to force one tool (docker desktop, minikube...) to everyone else.
 
-[![NuGet](https://img.shields.io/nuget/v/ToDoLater.Containerized.Infrastructure.Docker)](https://www.nuget.org/packages/ToDoLater)
-[![Nuget](https://img.shields.io/nuget/dt/ToDoLater.Containerized.Infrastructure.Docker)](https://www.nuget.org/packages/ToDoLater.Containerized.Infrastructure.Docker)
+[![NuGet](https://img.shields.io/nuget/v/ToDoLater.Containerized.Infrastructure.Docker)](https://www.nuget.org/packages/ToDoLater.Containerized.Infrastructure.Docker/)
+[![Nuget](https://img.shields.io/nuget/dt/ToDoLater.Containerized.Infrastructure.Docker)](https://www.nuget.org/packages/ToDoLater.Containerized.Infrastructure.Docker/)
 
 ## Roadmap
 
