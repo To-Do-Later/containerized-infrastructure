@@ -55,6 +55,9 @@
                         Arguments = command, 
                         RedirectStandardError = true,
                         RedirectStandardOutput = true,
+#if NETSTANDARD2_0
+                        UseShellExecute = false
+#endif
                     }
                 })
                 {
