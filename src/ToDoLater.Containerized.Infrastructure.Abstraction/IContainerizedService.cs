@@ -43,6 +43,6 @@
         /// <value>
         /// The state of the container initialization.
         /// </value>
-        public ServiceState State { get; }
+        ServiceState State { get; }
     }
 }
