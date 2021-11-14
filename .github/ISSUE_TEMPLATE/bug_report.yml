@@ -1,0 +1,65 @@
+name: Bug Report
+description: Create a report to help us improve
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome bug reports! This template will help us gather the information we need to start the triage process.
+  - type: input
+    id: containerized_infrastructure_version
+    attributes:
+      label: Containerized Infrastructure Version
+      description: "Please provide the full Containerized Infrastructure version of your project."
+      placeholder: "v1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Bug description
+      description: Please share a clear and concise description of the problem. Whenever is possible include error messages, logs, exception stacktraces or memory dumps.
+      placeholder: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Which steps do we need to take to reproduce this error?
+      placeholder: "Steps to reproduce"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Please provide more information on your environment:
+          * Which version of .NET is the code running on?
+          * What OS and version?
+          * What is the architecture (x64, x86)?
+          * What is yor container engine?
+          * What is the continuous integration system?
+      placeholder: Environment
+    validations:
+      required: false
+  - type: textarea
+    id: known-workarounds
+    attributes:
+      label: Known Workarounds
+      description: |
+        Please provide a description of any known workarounds.
+      placeholder: Known Workarounds
+    validations:
+      required: false
+  - type: textarea
+    id: other_info
+    attributes:
+      label: Other information
+      description: |
+        Other information related with the issue.
+      placeholder: Other information
+    validations:
+      required: false
