@@ -1,0 +1,36 @@
+name: Bug Report
+description: Suggest an idea for this project
+title: "[New Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        New ideas are appreciated! This template will help us gather the information we need to review it.
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: |
+        What problem are you trying to solve? 
+      placeholder: Use case
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Possible solution
+      description: |
+        Describe the solution you'd like.
+      placeholder: Solution
+    validations:
+      required: false
+  - type: textarea
+    id: other_info
+    attributes:
+      label: Other information
+      description: |
+        Other information related with the issue.
+      placeholder: Other information
+    validations:
+      required: false
