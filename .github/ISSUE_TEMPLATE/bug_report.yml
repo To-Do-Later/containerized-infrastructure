@@ -1,0 +1,16 @@
+name: Bug Report
+description: Create a report to help us improve
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome bug reports! This template will help us gather the information we need to start the triage process.
+  - type: input
+    id: containerized_infrastructure_version
+    attributes:
+      label: Containerized Infrastructure Version
+      description: "Please provide the full Containerized Infrastructure version of your project."
+      placeholder: "v1.0.0"
+    validations:
+      required: true
